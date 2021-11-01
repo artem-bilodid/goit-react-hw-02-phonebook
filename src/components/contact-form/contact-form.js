@@ -7,7 +7,7 @@ const INITIAL_STATE = {
 };
 
 class ContactForm extends Component {
-  state = INITIAL_STATE;
+  state = { ...INITIAL_STATE };
   handleChange = event => {
     const { name, value } = event.target;
 
@@ -21,7 +21,7 @@ class ContactForm extends Component {
     const number = event.target.number.value;
 
     this.props.onSubmit(name, number);
-    this.setState(INITIAL_STATE);
+    this.setState({ ...INITIAL_STATE });
   };
 
   render() {
