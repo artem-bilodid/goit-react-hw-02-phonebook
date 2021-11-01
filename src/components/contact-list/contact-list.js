@@ -1,4 +1,4 @@
-import s from './contact-list.module.scss';
+// import s from './contact-list.module.scss';
 
 const ContactList = ({ contacts }) => {
   const contactItems = contacts.map(({ id, name, number }) => (
