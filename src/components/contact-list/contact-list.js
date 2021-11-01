@@ -1,4 +1,5 @@
 import s from './contact-list.module.scss';
+import { PropTypes } from 'prop-types';
 
 const ContactList = ({ contacts, handleDelete }) => {
   const contactItems = contacts.map(({ id, name, number }) => (
@@ -15,6 +16,17 @@ const ContactList = ({ contacts, handleDelete }) => {
   ));
 
   return <ul className={s.list}>{contactItems}</ul>;
+};
+
+ContactList.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.number.isRequired,
+    }).isRequired,
+  ).isRequired,
+  handleDelete: PropTypes.func.isRequired,
 };
 
 export default ContactList;
